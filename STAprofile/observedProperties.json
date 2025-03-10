@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "@iot.selfLink": { "type": "string", "format": "uri" },
+          "@iot.id": { "type": "integer" },
+          "name": { "type": "string" },
+          "definition": { "type": "string", "format": "uri" },
+          "description": { "type": "string" },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "unitOfMeasurement": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "symbol": { "type": "string" },
+                  "definition": { "type": "string", "format": "uri" }
+                },
+                "required": ["name", "symbol", "definition"]
+              }
+            },
+            "required": ["unitOfMeasurement"]
+          },
+          "Datastreams@iot.navigationLink": { "type": "string", "format": "uri" }
+        },
+        "required": ["@iot.selfLink", "@iot.id", "name", "definition", "description", "properties", "Datastreams@iot.navigationLink"]
+      }
+    }
+  },
+  "required": ["value"]
+}
+
