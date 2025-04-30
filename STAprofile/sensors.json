@@ -16,7 +16,7 @@
           "properties": {
             "type": "object",
             "properties": {
-              "applicationDomain": {
+              "sdo:category": {
                 "type": "object",
                 "properties": {
                   "name": { "type": "string" },
@@ -36,7 +36,7 @@
                 },
                 "required": ["rawUnit", "description", "convertedUnit", "conversionFormula"]
               },
-              "manufacturer": {
+              "sdo:manufacturer": {
                 "type": "object",
                 "properties": {
                   "name": { "type": "string" },
@@ -45,7 +45,7 @@
                   "inDefinedTermSet": { "type": "string", "enum": ["http://vocab.nerc.ac.uk/collection/L35/current/"] }                },
                 "required": ["name", "termCode", "identifier", "inDefinedTermSet"]
               },
-              "measurementRange": {
+              "ssn:measurementRange": {
                 "type": "object",
                 "properties": {
                   "max": { "type": "number" },
@@ -62,7 +62,7 @@
                 },
                 "required": ["max", "min", "unitOfMeasurement"]
               },
-              "modelID": {
+              "sdo:model": {
                 "type": "object",
                 "properties": {
                   "name": { "type": "string" },
@@ -74,7 +74,7 @@
                 },
                 "required": ["name", "termCode", "identifier", "inDefinedTermSet"]
               },
-              "sensorPID": {
+              "identifier": {
                 "type": "object",
                 "properties": {
                   "@id": { "type": "string", "format": "uri" },
