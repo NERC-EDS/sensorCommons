@@ -14,7 +14,7 @@
           "properties": {
             "type": "object",
             "properties": {
-              "operator": {
+              "sdo:provider": {
                 "type": "object",
                 "properties": {
                   "@id": { "type": "string", "format": "uri" },
@@ -27,7 +27,7 @@
                 },
                 "required": ["@id", "name", "@type", "value", "propertyID"]
               },
-              "platformType": {
+              "sdo:category": {
                 "type": "object",
                 "properties": {
                   "name": { "type": "string" },
@@ -39,20 +39,19 @@
                 },
                 "required": ["name", "termCode", "identifier", "inDefinedTermSet"]
               },
-              "uniqueID": {
+              "sdo:identifier": {
                 "type": "object",
                 "properties": {
-                  "name": { "type": "string" },
-                  "termCode": { "type": "string" },
-                  "identifier": { "type": "string", "format": "uri" },
-                                   "inDefinedTermSet": { "type": "string", "enum": ["http://vocab.nerc.ac.uk/collection/C17/current/"] }
-
+                  "@id": { "type": "string" },
+                  "@type": { "type": "string" },
+                  "value": { "type": "string" },
+                  "propertyID": { "type": "string" }
 
                 },
-                "required": ["name", "termCode", "identifier", "inDefinedTermSet"]
+                "required": ["@id", "@type", "value", "propertyID"]
               }
             },
-            "required": ["operator", "platformType", "uniqueID"]
+            "required": ["sdo:provider", "sdo:category", "sdo:identifier"]
           },
           "HistoricalLocations@iot.navigationLink": { "type": "string", "format": "uri" },
           "Locations@iot.navigationLink": { "type": "string", "format": "uri" },
